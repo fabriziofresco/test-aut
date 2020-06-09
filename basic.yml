@@ -4,9 +4,12 @@
 
   tasks:
 
+    - copy:
+         content: "blablabla"
+         dest: "/tmp/I_was_here"
     # this is for all servers
-    - name: Changing /etc/resolv.conf search configuration
-      lineinfile:
-        dest: /tmp/resolv.conf
-        regexp: '^search'
-        line: 'search fab'
+    #- name: Changing /etc/resolv.conf search configuration
+    #  lineinfile:
+    #    dest: /tmp/resolv.conf
+    #    regexp: '^search'
+    #    line: 'search fab'
