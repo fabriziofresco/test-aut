@@ -1,0 +1,12 @@
+---
+- hosts: all
+  become: yes
+
+  tasks:
+
+    # this is for all servers
+    - name: Changing /etc/resolv.conf search configuration
+      lineinfile:
+        dest: /etc/resolv.conf
+        regexp: '^search'
+        line: 'search novalocal'
