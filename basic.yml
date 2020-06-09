@@ -9,4 +9,4 @@
       lineinfile:
         dest: /etc/resolv.conf
         regexp: '^search'
-        line: 'search novalocal'
+        line: 'search fab'
