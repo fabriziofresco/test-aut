@@ -7,6 +7,6 @@
     # this is for all servers
     - name: Changing /etc/resolv.conf search configuration
       lineinfile:
-        dest: /etc/resolv.conf
+        dest: /tmp/resolv.conf
         regexp: '^search'
         line: 'search fab'
