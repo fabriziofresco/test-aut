@@ -5,5 +5,5 @@
   tasks:
 
     - copy:
-         content: "Danfoss simple text file"
+         content: "Danfoss simple text file 123456"
          dest: "/tmp/fab_was_here"
