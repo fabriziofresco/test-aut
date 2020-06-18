@@ -5,8 +5,8 @@
   tasks:
 
     - copy:
-         content: "blablabla"
-         dest: "/tmp/I_was_here"
+         content: "simple text file"
+         dest: "/tmp/fab_was_here"
     # this is for all servers
     #- name: Changing /etc/resolv.conf search configuration
     #  lineinfile:
