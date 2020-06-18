@@ -5,11 +5,5 @@
   tasks:
 
     - copy:
-         content: "simple text file"
+         content: "Danfoss simple text file"
          dest: "/tmp/fab_was_here"
-    # this is for all servers
-    #- name: Changing /etc/resolv.conf search configuration
-    #  lineinfile:
-    #    dest: /tmp/resolv.conf
-    #    regexp: '^search'
-    #    line: 'search fab'
