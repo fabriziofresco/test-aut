@@ -1,3 +1,3 @@
 # test-aut
-Test repository 123
+Test repository
 
