@@ -1,4 +1,4 @@
-#!/usr/local/rvm/bin/rvm-shell -l
+#!/usr/local/rvm/bin/rvm-shell --login
 
 #cd $GIT_CHECKOUT_DIR
 #pwd
