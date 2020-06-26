@@ -1,15 +1,6 @@
 #!/usr/local/rvm/bin/rvm-shell -lex
 
-#cd $GIT_CHECKOUT_DIR
-#pwd
-#source /etc/bash.bashrc
-#/etc/profile.d/rvm.sh
-#
-#echo "this is my file" > myfile.txt
-#echo $PATH
 cd /usr/local/rvm/gems/ruby-2.7.0/bin
-
-#./morpheus apps remove jenkins-testing_vm --remove-instances on -y
 
 ./morpheus apps add jenkins-testing_vm --debug -b 7 \
     -O App.0.layout=1178 \
