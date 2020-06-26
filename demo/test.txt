@@ -1,0 +1,27 @@
+sudo sh -c 'curl --silent --location http://pkg.jenkins-ci.org/redhat-stable/jenkins.repo | sudo tee /etc/yum.repos.d/jenkins.repo'
+sudo rpm --import https://jenkins-ci.org/redhat/jenkins-ci.org.key
+sudo yum -y install epel-release yum-utils
+sudo yum -y install java-1.8.0-openjdk.x86_64
+sudo yum -y install wget phpMyAdmin httpd mod_ssl php php-common php-mysql php-gd php-xml php-mbstring php-mcrypt
+sudo yum -y install jenkins
+sudo systemctl start jenkins
+sudo systemctl enable jenkins
+sudo systemctl status jenkins
+sudo systemctl start httpd
+sudo systemctl enable httpd
+sudo firewall-cmd --add-service=http
+sudo firewall-cmd --add-service=https
+sudo firewall-cmd --permanent --zone=public --add-port=8080/tcp
+sudo firewall-cmd --runtime-to-permanent
+sudo firewall-cmd --reload
+
+sudo cp /etc/profile /etc/profile_backup
+sudo sh -c 'echo 'export JAVA_HOME=/usr/lib/jvm/jre-1.8.0-openjdk' >> /etc/profile'
+sudo sh -c 'echo 'export JRE_HOME=/usr/lib/jvm/jre' >> /etc/profile'
+source /etc/profile
+
+sudo sh -c 'echo net.ipv6.conf.all.disable_ipv6 = 1 >> /etc/sysctl.conf'
+sudo sh -c 'echo net.ipv6.conf.default.disable_ipv6 = 1 >> /etc/sysctl.conf'
+sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1
+sudo sysctl -w net.ipv6.conf.default.disable_ipv6=1
+sudo sysctl -p
