@@ -9,7 +9,7 @@
 #echo $PATH
 cd /usr/local/rvm/gems/ruby-2.7.0/bin
 
-./morpheus apps remove jenkins-testing_vm --remove-instances on -y
+#./morpheus apps remove jenkins-testing_vm --remove-instances on -y
 
 ./morpheus apps add jenkins-testing_vm --debug -b 7 \
     -O App.0.layout=1178 \
