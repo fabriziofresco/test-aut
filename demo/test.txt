@@ -1,3 +1,1 @@
-wget https://github.com/frescof/demos/raw/master/db.gz
-gunzip db.gz
-sudo mysql -u root -p$RPass $WPDB < db
+hello
