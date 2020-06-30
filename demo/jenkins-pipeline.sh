@@ -1,4 +1,4 @@
-#!/usr/local/rvm/bin/rvm-shell -lex
+#!/usr/local/rvm/bin/rvm-shell -le
 
 cd /usr/local/rvm/gems/ruby-2.7.0/bin
 
