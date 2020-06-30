@@ -1,2 +1,17 @@
-hello
+#!/bin/bash -x
 
+cd $GIT_CHECKOUT_DIR; cd workspace
+#ID=`cat instance_id.txt`
+URL="https://jeogmmibbr35d2gqthpbk5pa51.privatecloud.greenlake.hpe.com"
+TOKEN="2519f2bf-6298-490a-8538-ade0db43e2b2"
+
+
+for i in {1..30} 
+ do
+   curl -k "$URL/api/instances" \
+        -H "Authorization: BEARER $MORPHEUS_API_TOKEN" |\
+        jq '.| select (.instance.name=="jenkins-testing_vm")| .instance.connectionInfo[].ip' > instance_ip.txt
+   if [ $? -eq 0 ]; then exit 0; fi
+   sleep 10
+ done
+exit 1
